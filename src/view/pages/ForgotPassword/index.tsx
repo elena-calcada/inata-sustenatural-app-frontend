@@ -7,7 +7,8 @@ import { Input } from "../../components/Input";
 import { useForgotPasswordController } from "./useForgotPasswordController";
 
 export function ForgotPassword() {
-  const { errors, handleSubmit, register } = useForgotPasswordController();
+  const { errors, handleSubmit, register, isPending } =
+    useForgotPasswordController();
 
   return (
     <div className="px-4 h-full overflow-y-auto w-full flex flex-col items-center justify-center max-w-[448px] mx-auto">
@@ -38,7 +39,9 @@ export function ForgotPassword() {
           {...register("email")}
           error={errors.email?.message}
         />
-        <ButtonSend>Enviar código para o e-mail</ButtonSend>
+        <ButtonSend isPending={isPending}>
+          Enviar código para o e-mail
+        </ButtonSend>
       </form>
     </div>
   );

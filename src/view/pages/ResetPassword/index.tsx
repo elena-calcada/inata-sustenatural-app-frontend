@@ -7,7 +7,8 @@ import { Input } from "../../components/Input";
 import { useResetPasswordController } from "./useResetPasswordController";
 
 export function ResetPassword() {
-  const { handleSubmit, register, errors } = useResetPasswordController();
+  const { handleSubmit, register, errors, isPending } =
+    useResetPasswordController();
 
   return (
     <div className="px-4 h-full overflow-y-auto w-full flex flex-col items-center justify-center max-w-[448px] mx-auto">
@@ -45,7 +46,7 @@ export function ResetPassword() {
           {...register("newPassword")}
           error={errors.newPassword?.message}
         />
-        <ButtonSend>Alterar senha</ButtonSend>
+        <ButtonSend isPending={isPending}>Alterar senha</ButtonSend>
       </form>
     </div>
   );

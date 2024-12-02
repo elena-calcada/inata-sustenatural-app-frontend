@@ -1,6 +1,12 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { z } from "zod";
+
+import { authService } from "../../../app/services/authService";
+import { IForgotPasswordParams } from "../../../app/services/authService/forgotPassword";
+import { showSuccessToast } from "../../../app/utils/toast";
 
 const schema = z.object({
   email: z
@@ -12,6 +18,8 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 export function useForgotPasswordController() {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit: hookFormHandleSubmit,
@@ -20,9 +28,17 @@ export function useForgotPasswordController() {
     resolver: zodResolver(schema),
   });
 
-  const handleSubmit = hookFormHandleSubmit((data) => {
-    console.log("Chama a API com: ", data);
+  const { mutateAsync, isPending } = useMutation({
+    mutationFn: async (dataProps: IForgotPasswordParams) => {
+      authService.forgotPassword(dataProps);
+    },
   });
 
-  return { handleSubmit, register, errors };
+  const handleSubmit = hookFormHandleSubmit(async (data) => {
+    await mutateAsync(data);
+    showSuccessToast("O código foi enviado para o e-mail.");
+    navigate("/reset-password");
+  });
+
+  return { handleSubmit, register, isPending, errors };
 }

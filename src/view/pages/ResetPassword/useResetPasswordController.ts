@@ -1,6 +1,12 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { z } from "zod";
+
+import { authService } from "../../../app/services/authService";
+import { IResetPasswordParams } from "../../../app/services/authService/resetPassword";
+import { showErrorToast, showSuccessToast } from "../../../app/utils/toast";
 
 const schema = z.object({
   email: z
@@ -16,6 +22,8 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 export function useResetPasswordController() {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit: hookFormHandleSubmit,
@@ -24,9 +32,20 @@ export function useResetPasswordController() {
     resolver: zodResolver(schema),
   });
 
-  const handleSubmit = hookFormHandleSubmit((data) => {
-    console.log("Chama a API com: ", data);
+  const { mutateAsync, isPending } = useMutation({
+    mutationFn: async (dataProps: IResetPasswordParams) =>
+      authService.resetPassword(dataProps),
   });
 
-  return { handleSubmit, register, errors };
+  const handleSubmit = hookFormHandleSubmit(async (data) => {
+    try {
+      await mutateAsync(data);
+      showSuccessToast("Senha alterada com sucesso!");
+      navigate("/");
+    } catch {
+      showErrorToast("Algo deu errado...");
+    }
+  });
+
+  return { handleSubmit, register, errors, isPending };
 }
