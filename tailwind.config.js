@@ -11,6 +11,7 @@ export default {
         redAlert: "#F44336",
         green: "#00875F",
         background: "#F9F9F9",
+        grayDark: '#4E4A49',
         blueColor: {
           base: "rgba(69, 151, 177, 1)",
           dark: "rgba(0, 94, 124, 1)",

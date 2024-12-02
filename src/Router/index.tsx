@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { AuthLayout } from "../view/layouts/AuthLayout";
+import { PageLayout } from "../view/layouts/PageLayout";
 import { ForgotPassword } from "../view/pages/ForgotPassword";
 import { Login } from "../view/pages/Login";
 import { ResetPassword } from "../view/pages/ResetPassword";
@@ -21,7 +22,9 @@ export function Router() {
         </Route>
 
         <Route element={<AuthGuard isPrivate />}>
-          <Route path="tours" element={<Tours />} />
+          <Route element={<PageLayout />}>
+            <Route path="tours" element={<Tours />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

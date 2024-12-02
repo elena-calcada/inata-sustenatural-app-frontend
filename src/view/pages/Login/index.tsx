@@ -6,7 +6,7 @@ import { Input } from "../../components/Input";
 import { useLoginController } from "./useLoginController";
 
 export function Login() {
-  const { handleSubmit, register, errors } = useLoginController();
+  const { handleSubmit, register, errors, isPending } = useLoginController();
 
   return (
     <div className="px-4 h-full overflow-y-auto w-full flex flex-col items-center justify-center max-w-[448px] mx-auto">
@@ -37,7 +37,7 @@ export function Login() {
             </Link>
           </div>
         </div>
-        <ButtonSend>Entrar</ButtonSend>
+        <ButtonSend isPending={isPending}>Entrar</ButtonSend>
       </form>
     </div>
   );
