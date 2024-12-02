@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 import { ButtonSend } from "../../components/ButtonSend";
 import { Input } from "../../components/Input";
 
+import { useResetPasswordController } from "./useResetPasswordController";
+
 export function ResetPassword() {
+  const { handleSubmit, register, errors } = useResetPasswordController();
+
   return (
     <div className="px-4 h-full overflow-y-auto w-full flex flex-col items-center justify-center max-w-[448px] mx-auto">
       <div className="flex gap-4 items-center mb-4">
@@ -19,11 +23,29 @@ export function ResetPassword() {
 
       <h1 className="text-2xl font-bold">Altere sua senha</h1>
 
-      <form className="mt-10 flex flex-col gap-4 mx-auto w-full">
-        <Input type="email" name="email" placeholder="E-mail" />
-        <Input type="text" name="code" placeholder="Código de verificação" />
-        <Input type="password" name="newPassword" placeholder="Nova senha" />
-        <ButtonSend containerStyle="">Alterar senha</ButtonSend>
+      <form
+        onSubmit={handleSubmit}
+        className="mt-10 flex flex-col gap-4 mx-auto w-full"
+      >
+        <Input
+          type="email"
+          placeholder="E-mail"
+          {...register("email")}
+          error={errors.email?.message}
+        />
+        <Input
+          type="text"
+          placeholder="Código de verificação"
+          {...register("code")}
+          error={errors.code?.message}
+        />
+        <Input
+          type="password"
+          placeholder="Nova senha"
+          {...register("newPassword")}
+          error={errors.newPassword?.message}
+        />
+        <ButtonSend>Alterar senha</ButtonSend>
       </form>
     </div>
   );

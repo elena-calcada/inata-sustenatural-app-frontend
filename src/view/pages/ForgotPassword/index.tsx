@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 import { ButtonSend } from "../../components/ButtonSend";
 import { Input } from "../../components/Input";
 
+import { useForgotPasswordController } from "./useForgotPasswordController";
+
 export function ForgotPassword() {
+  const { errors, handleSubmit, register } = useForgotPasswordController();
+
   return (
     <div className="px-4 h-full overflow-y-auto w-full flex flex-col items-center justify-center max-w-[448px] mx-auto">
       <div className="flex gap-4 items-center mb-4">
@@ -24,9 +28,17 @@ export function ForgotPassword() {
         verificação para prosseguir com a recuperação da senha.
       </p>
 
-      <form className="mt-10 flex flex-col gap-4 mx-auto w-full">
-        <Input type="email" name="email" placeholder="E-mail" />
-        <ButtonSend containerStyle="">Enviar código para o e-mail</ButtonSend>
+      <form
+        onSubmit={handleSubmit}
+        className="mt-10 flex flex-col gap-4 mx-auto w-full"
+      >
+        <Input
+          type="text"
+          placeholder="E-mail"
+          {...register("email")}
+          error={errors.email?.message}
+        />
+        <ButtonSend>Enviar código para o e-mail</ButtonSend>
       </form>
     </div>
   );
