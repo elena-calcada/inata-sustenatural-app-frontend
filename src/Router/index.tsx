@@ -7,6 +7,7 @@ import { UpdateTour } from "../view/pages/EditTour";
 import { ForgotPassword } from "../view/pages/ForgotPassword";
 import { Login } from "../view/pages/Login";
 import { ResetPassword } from "../view/pages/ResetPassword";
+import { TourDetail } from "../view/pages/TourDetail";
 import { Tours } from "../view/pages/Tours";
 
 import { AuthGuard } from "./AuthGuard";
@@ -28,6 +29,7 @@ export function Router() {
             <Route path="/tours" element={<Tours />} />
             <Route path="/tours/new" element={<CreateTour />} />
             <Route path="/tours/:tourId/edit" element={<UpdateTour />} />
+            <Route path="/tours/:tourId" element={<TourDetail />} />
           </Route>
         </Route>
       </Routes>

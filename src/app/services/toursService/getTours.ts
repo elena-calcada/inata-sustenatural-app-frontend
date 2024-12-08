@@ -1,6 +1,6 @@
 import { httpClient } from "../HttpClient";
 
-interface ITourProps {
+export interface ITourProps {
   id: string;
   title: string;
   location: string;
