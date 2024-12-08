@@ -3,3 +3,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-montserrat;
+  }
+
+  .h1 {
+    @apply mb-4 text-2xl font-bold;
+  }
+
+  .containerSection {
+    @apply w-full h-screen max-w-[1280px] mx-auto px-4 md:px-[24px] lg:px-[64px];
+  }
+
+  .divContainerSection {
+    @apply w-full h-full flex flex-col items-start pt-28 pb-8;
+  }
+}
