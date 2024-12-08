@@ -1,10 +1,11 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 
+import { useGetTourById } from "../../../app/hooks/useGetTourById";
 import { toursService } from "../../../app/services/toursService";
 import { IUpdateTourParams } from "../../../app/services/toursService/updateTour";
 import { showErrorToast, showSuccessToast } from "../../../app/utils/toast";
@@ -22,20 +23,8 @@ type FormData = z.infer<typeof schema>;
 
 export function useEditTourController() {
   const navigate = useNavigate();
-  const { tourId } = useParams();
 
-  const { data: tour, isFetching } = useQuery({
-    queryKey: ["getTourById", tourId],
-    queryFn: async () => {
-      if (!tourId) {
-        showErrorToast("O Passeio não pode ser editado");
-        navigate("/tours");
-        return null;
-      }
-      return toursService.getTourById(tourId);
-    },
-    enabled: !!tourId,
-  });
+  const { tour, isFetching } = useGetTourById();
 
   const {
     register,
@@ -62,7 +51,7 @@ export function useEditTourController() {
 
   const { mutateAsync: updateTour, isPending: isPendingUpdate } = useMutation({
     mutationFn: async (dataProps: IUpdateTourParams) =>
-      toursService.updateTour(tourId, dataProps),
+      toursService.updateTour(tour?.id, dataProps),
   });
 
   const handleSubmit = hookFormHandleSubmit(async (data) => {
