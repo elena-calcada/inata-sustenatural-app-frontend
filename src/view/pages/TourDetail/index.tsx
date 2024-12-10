@@ -16,6 +16,10 @@ export function TourDetail() {
     isFetchingTour,
     isFetchingItems,
     isFetchingImages,
+    handleAssignTourCover,
+    handleRemoveTourCover,
+    handleRemoveImage,
+    handleRemoveItem,
   } = useTourDetailController();
 
   return (
@@ -61,7 +65,7 @@ export function TourDetail() {
                 </span>
               </div>
               <ButtonLink
-                href={`/tours/${tour?.id}/itens/cadastro`}
+                href={`/tours/${tour?.id}/items/register`}
                 name="Novo"
                 containerStyle=""
               />
@@ -95,6 +99,7 @@ export function TourDetail() {
                     href={`/tours/${tour?.id}/itens/${item.id}/cover`}
                     hrefEdit={`/tours/${tour?.id}/itens/${item.id}`}
                     item={item}
+                    deleteItem={handleRemoveItem}
                   />
                 ))}
               </div>
@@ -138,9 +143,9 @@ export function TourDetail() {
                     key={image.id}
                     image={image}
                     tour={tour}
-                    /* assignCover={handleAssignCover}
-                  removeCover={handleRemoveCover}
-                  deleteImage={handleDeleteImage} */
+                    assignTourCover={handleAssignTourCover}
+                    removeCover={handleRemoveTourCover}
+                    deleteImage={handleRemoveImage}
                   />
                 ))}
               </div>

@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { AuthLayout } from "../view/layouts/AuthLayout";
 import { PageLayout } from "../view/layouts/PageLayout";
+import { CreateItemTour } from "../view/pages/CreateItemTour";
 import { CreateTour } from "../view/pages/CreateTour";
 import { UpdateTour } from "../view/pages/EditTour";
 import { ForgotPassword } from "../view/pages/ForgotPassword";
@@ -30,6 +31,10 @@ export function Router() {
             <Route path="/tours/new" element={<CreateTour />} />
             <Route path="/tours/:tourId/edit" element={<UpdateTour />} />
             <Route path="/tours/:tourId" element={<TourDetail />} />
+            <Route
+              path="/tours/:tourId/items/register"
+              element={<CreateItemTour />}
+            />
           </Route>
         </Route>
       </Routes>

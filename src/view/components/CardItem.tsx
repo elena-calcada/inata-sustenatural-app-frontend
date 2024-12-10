@@ -2,14 +2,16 @@ import { Edit, Trash2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { IItemsProps } from "../../app/services/itemsService/getItems";
+import { IRemoveItemProps } from "../../app/services/itemsService/removeItem";
 
 interface ICardProps {
   href: string;
   hrefEdit: string;
   item: IItemsProps;
+  deleteItem: ({ itemId, tourId }: IRemoveItemProps) => void;
 }
 
-export function ItemCard({ href, hrefEdit, item }: ICardProps) {
+export function ItemCard({ href, hrefEdit, item, deleteItem }: ICardProps) {
   return (
     <div className="w-full bg-blueColor-backgroundCard shadow-md flex items-center gap-4 rounded-lg">
       <div className="w-full flex items-center justify-between border-l-[10px] border-blueColor-dark rounded-s-lg px-6 py-2">
@@ -42,7 +44,12 @@ export function ItemCard({ href, hrefEdit, item }: ICardProps) {
           >
             <Edit size={24} />
           </Link>
-          <button className="text-redAlert hover:scale-[1.1] transition-all">
+          <button
+            onClick={() =>
+              deleteItem({ tourId: item.tour_id, itemId: item.id })
+            }
+            className="text-redAlert hover:scale-[1.1] transition-all"
+          >
             <Trash2 size={24} />
           </button>
         </div>

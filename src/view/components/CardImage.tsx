@@ -1,21 +1,22 @@
 import { Link2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import { IAssingnCoverProps } from "../../app/services/imagesService/assignTourCover";
 import { IImageProps } from "../../app/services/imagesService/getImages";
 import { ITourProps } from "../../app/services/toursService/getTours";
 
 interface ICardImageProps {
   image: IImageProps;
   tour: ITourProps;
-  assignCover: (tourId: string, imageId: string) => void;
-  removeCover: (tourId: string, imageId: string) => void;
-  deleteImage: (tourId: string, imageId: string) => void;
+  assignTourCover: ({ tourId, imageId }: IAssingnCoverProps) => void;
+  removeCover: ({ tourId, imageId }: IAssingnCoverProps) => void;
+  deleteImage: ({ tourId, imageId }: IAssingnCoverProps) => void;
 }
 
 export function CardImage({
   tour,
   image,
-  assignCover,
+  assignTourCover,
   removeCover,
   deleteImage,
 }: ICardImageProps) {
@@ -34,7 +35,7 @@ export function CardImage({
         {tour.cover === image.id && (
           <button
             className="text-xs text-redAlert font-bold"
-            onClick={() => removeCover(image.id, tour.id)}
+            onClick={() => removeCover({ imageId: image.id, tourId: tour.id })}
           >
             Remover capa
           </button>
@@ -43,7 +44,9 @@ export function CardImage({
         {!tour.cover && image.cover === "NO" && (
           <button
             className="text-xs text-blueColor-base font-bold"
-            onClick={() => assignCover(tour.id, image.id)}
+            onClick={() =>
+              assignTourCover({ tourId: tour.id, imageId: image.id })
+            }
           >
             Usar como capa
           </button>
@@ -57,7 +60,7 @@ export function CardImage({
           </Link>
           <button
             className="text-xs text-redAlert font-semibold"
-            onClick={() => deleteImage(image.id, tour.id)}
+            onClick={() => deleteImage({ imageId: image.id, tourId: tour.id })}
           >
             Excluir
           </button>
