@@ -4,6 +4,7 @@ import { AuthLayout } from "../view/layouts/AuthLayout";
 import { PageLayout } from "../view/layouts/PageLayout";
 import { CreateItemTour } from "../view/pages/CreateItemTour";
 import { CreateTour } from "../view/pages/CreateTour";
+import { UpdateItemTour } from "../view/pages/EditItemTour";
 import { UpdateTour } from "../view/pages/EditTour";
 import { ForgotPassword } from "../view/pages/ForgotPassword";
 import { Login } from "../view/pages/Login";
@@ -34,6 +35,10 @@ export function Router() {
             <Route
               path="/tours/:tourId/items/register"
               element={<CreateItemTour />}
+            />
+            <Route
+              path="/tours/:tourId/items/:itemId"
+              element={<UpdateItemTour />}
             />
           </Route>
         </Route>

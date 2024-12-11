@@ -96,8 +96,8 @@ export function TourDetail() {
                 {items.map((item) => (
                   <ItemCard
                     key={item.id}
-                    href={`/tours/${tour?.id}/itens/${item.id}/cover`}
-                    hrefEdit={`/tours/${tour?.id}/itens/${item.id}`}
+                    href={`/tours/${tour?.id}/items/${item.id}/cover`}
+                    hrefEdit={`/tours/${tour?.id}/items/${item.id}`}
                     item={item}
                     deleteItem={handleRemoveItem}
                   />
