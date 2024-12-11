@@ -9,7 +9,7 @@ import { TextArea } from "../../components/TextArea";
 import { useEditItemTourController } from "./useEditItemTourController";
 
 export function UpdateItemTour() {
-  const { control, errors, handleSubmit, item, register, tour } =
+  const { control, errors, handleSubmit, item, register, tour, isPending } =
     useEditItemTourController();
 
   return (
@@ -181,7 +181,7 @@ export function UpdateItemTour() {
                   {...register("important")}
                 />
                 <ButtonSend
-                  // isPending={isPending}
+                  isPending={isPending}
                   type="submit"
                   className="mt-4"
                 >
