@@ -11,6 +11,7 @@ import { Login } from "../view/pages/Login";
 import { ResetPassword } from "../view/pages/ResetPassword";
 import { TourDetail } from "../view/pages/TourDetail";
 import { Tours } from "../view/pages/Tours";
+import { UploadImages } from "../view/pages/UploadImages";
 
 import { AuthGuard } from "./AuthGuard";
 
@@ -39,6 +40,10 @@ export function Router() {
             <Route
               path="/tours/:tourId/items/:itemId"
               element={<UpdateItemTour />}
+            />
+            <Route
+              path="/tours/:tourId/imagens/upload"
+              element={<UploadImages />}
             />
           </Route>
         </Route>

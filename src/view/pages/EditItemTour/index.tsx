@@ -4,6 +4,7 @@ import { ButtonBack } from "../../components/ButtonBack";
 import { ButtonSend } from "../../components/ButtonSend";
 import { Input } from "../../components/Input";
 import { Select } from "../../components/Select";
+import { Spinner } from "../../components/Spinner";
 import { TextArea } from "../../components/TextArea";
 
 import { useEditItemTourController } from "./useEditItemTourController";
@@ -15,6 +16,12 @@ export function UpdateItemTour() {
   return (
     <main className="w-full z-30 h-full bg-background overflow-y-auto">
       <section className="containerSection">
+        {!item && (
+          <div className="w-full h-full flex justify-center items-center">
+            <Spinner />
+          </div>
+        )}
+
         {tour && item && (
           <div className="divContainerSection">
             <div className="flex items-center justify-center gap-2">

@@ -120,7 +120,13 @@ export function TourDetail() {
               />
             </div>
 
-            {images.length === 0 && !isFetchingImages ? (
+            {isFetchingImages && (
+              <div className="w-full flex items-center justify-center mt-4">
+                <Spinner />
+              </div>
+            )}
+
+            {images.length === 0 && !isFetchingImages && (
               <div className="w-full flex flex-col gap-4 items-center justify-center mt-4 pb-20">
                 <PackageOpen className="size-20 stroke-1 text-blueColor-dark/70" />
                 <div className="flex flex-col items-center justify-center gap-1">
@@ -136,7 +142,9 @@ export function TourDetail() {
                   </span>
                 </div>
               </div>
-            ) : (
+            )}
+
+            {images.length !== 0 && !isFetchingImages && (
               <div className="w-full grid grid-cols-12 gap-4 pb-20 items-center justify-center">
                 {images.map((image) => (
                   <CardImage
