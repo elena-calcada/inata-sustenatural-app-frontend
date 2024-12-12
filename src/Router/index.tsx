@@ -7,6 +7,7 @@ import { CreateTour } from "../view/pages/CreateTour";
 import { UpdateItemTour } from "../view/pages/EditItemTour";
 import { UpdateTour } from "../view/pages/EditTour";
 import { ForgotPassword } from "../view/pages/ForgotPassword";
+import { PageItemCover } from "../view/pages/ItemCover";
 import { Login } from "../view/pages/Login";
 import { ResetPassword } from "../view/pages/ResetPassword";
 import { TourDetail } from "../view/pages/TourDetail";
@@ -44,6 +45,10 @@ export function Router() {
             <Route
               path="/tours/:tourId/imagens/upload"
               element={<UploadImages />}
+            />
+            <Route
+              path="/tours/:tourId/items/:itemId/cover"
+              element={<PageItemCover />}
             />
           </Route>
         </Route>
