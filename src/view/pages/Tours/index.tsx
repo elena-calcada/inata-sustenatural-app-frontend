@@ -11,12 +11,12 @@ export function Tours() {
     <main className="w-full overflow-y-auto bg-background">
       <section className="containerSection flex flex-col">
         <div className="divContainerSection">
-          <h1 className="h1">Passeios</h1>
+          <h1 className="h1">Grupos de Passeios</h1>
           <div className="w-full flex items-center justify-between border-b-[1px] border-textColor/25 pb-2 mb-4">
             <span className="text-base font-bold font-montserrat">
               {tours.length === 1
-                ? `${tours.length} item`
-                : `${tours.length} itens`}
+                ? `${tours.length} grupo`
+                : `${tours.length} grupos`}
             </span>
             <ButtonLink containerStyle="" href="/tours/new" name="Novo" />
           </div>

@@ -97,10 +97,6 @@ export function Select({
           <span className="text-xs ">{error}</span>
         </div>
       )}
-
-      {!error && (
-        <div className="flex h-0 xl:h-4 items-center mt-1 mb-[3px] text-white" />
-      )}
     </div>
   );
 }

@@ -57,10 +57,10 @@ export function useEditTourController() {
   const handleSubmit = hookFormHandleSubmit(async (data) => {
     try {
       await updateTour(data);
-      showSuccessToast("Passeio editado com sucesso");
+      showSuccessToast("Grupo editado com sucesso");
       navigate("/tours");
     } catch {
-      showErrorToast("Não foi possível editar o passeio");
+      showErrorToast("Não foi possível editar o grupo");
     }
   });
 

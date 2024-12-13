@@ -49,7 +49,7 @@ export function TourDetail() {
                 )}
                 <div className="flex items-center gap-2 mb-4">
                   <h1 className="text-2xl font-bold xs:text-xl">
-                    {tour?.title}
+                    {`Grupo - ${tour?.title}`}
                   </h1>
                   <ButtonBack href="/tours" containerStyle="" />
                 </div>
@@ -60,8 +60,8 @@ export function TourDetail() {
               <div className="">
                 <span className="text-base font-bold font-montserrat">
                   {items?.length === 1
-                    ? `${items.length} item`
-                    : `${items?.length} itens`}
+                    ? `${items.length} passeio`
+                    : `${items?.length} passeios`}
                 </span>
               </div>
               <ButtonLink

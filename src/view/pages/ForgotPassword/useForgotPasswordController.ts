@@ -36,7 +36,7 @@ export function useForgotPasswordController() {
 
   const handleSubmit = hookFormHandleSubmit(async (data) => {
     await mutateAsync(data);
-    showSuccessToast("O código foi enviado para o e-mail.");
+    showSuccessToast("Código enviado para o e-mail.");
     navigate("/reset-password");
   });
 

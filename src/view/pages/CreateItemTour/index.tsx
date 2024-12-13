@@ -109,7 +109,7 @@ export function CreateItemTour() {
                   error={errors.meeting_point_description?.message}
                 />
 
-                <div className="w-full flex flex-col items-center gap-4 py-2 md:flex-row">
+                <div className="w-full flex flex-col items-center gap-2 md:gap-4 my-2 md:flex-row">
                   <div className="flex flex-col w-full items-start md:w-1/2">
                     <Controller
                       control={control}
@@ -189,7 +189,7 @@ export function CreateItemTour() {
                   type="submit"
                   className="mt-4"
                 >
-                  Salvar
+                  Cadastrar
                 </ButtonSend>
               </form>
             </div>

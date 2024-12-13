@@ -43,7 +43,7 @@ export function useResetPasswordController() {
       showSuccessToast("Senha alterada com sucesso!");
       navigate("/");
     } catch {
-      showErrorToast("Algo deu errado...");
+      showErrorToast("Não foi possível alterar a senha");
     }
   });
 
