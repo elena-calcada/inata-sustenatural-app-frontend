@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.vercel-live-feedback {
+iframe[src*="vercel.live"] {
   display: none !important;
 }
 
