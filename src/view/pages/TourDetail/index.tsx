@@ -78,15 +78,17 @@ export function TourDetail() {
             )}
 
             {items.length === 0 && !isFetchingItems ? (
-              <div className="w-full flex flex-col gap-4 items-center justify-center mt-4">
-                <PackageOpen className="size-20 stroke-1 text-blueColor-dark/70" />
+              <div className="w-full flex flex-col gap-1 items-center justify-center">
+                <PackageOpen className="size-16 stroke-1 text-blueColor-dark/70" />
                 <div className="flex flex-col items-center justify-center gap-1">
-                  <span className="text-textColor/30 font-semibold">
+                  <span className="text-textColor/30 font-semibold text-sm">
                     Você ainda não tem nenhum item cadastrado nesse passeio.
                   </span>
-                  <span className="text-textColor/30 font-semibold">
+                  <span className="text-textColor/30 font-semibold text-sm">
                     Clique no botão{" "}
-                    <span className="text-blueColor-base font-bold">Novo</span>{" "}
+                    <span className="text-blueColor-base font-bold text-sm">
+                      Novo
+                    </span>{" "}
                     acima para cadastrar o primeiro.
                   </span>
                 </div>
@@ -105,7 +107,7 @@ export function TourDetail() {
               </div>
             )}
 
-            <div className="w-full flex items-center justify-between border-b-[1px] border-textColor/25 pb-2 mb-4 mt-8">
+            <div className="w-full flex items-center justify-between border-b-[1px] border-textColor/25 pb-2 mb-4">
               <div className="flex items-center gap-4 text-">
                 <span className="text-lg font-bold font-montserrat">
                   {images.length === 1
@@ -127,15 +129,15 @@ export function TourDetail() {
             )}
 
             {images.length === 0 && !isFetchingImages && (
-              <div className="w-full flex flex-col gap-4 items-center justify-center mt-4 pb-20">
-                <PackageOpen className="size-20 stroke-1 text-blueColor-dark/70" />
+              <div className="w-full flex flex-col gap-1 items-center justify-center mt-2 pb-20">
+                <PackageOpen className="size-16 stroke-1 text-blueColor-dark/70" />
                 <div className="flex flex-col items-center justify-center gap-1">
-                  <span className="text-textColor/30 font-semibold">
+                  <span className="text-textColor/30 font-semibold text-sm">
                     Você ainda não tem nenhuma imagem cadastrada nesse passeio.
                   </span>
-                  <span className="text-textColor/30 font-semibold">
+                  <span className="text-textColor/30 font-semibold text-sm">
                     Clique no botão{" "}
-                    <span className="text-blueColor-base font-bold">
+                    <span className="text-blueColor-base font-bold text-sm">
                       Inserir
                     </span>{" "}
                     acima para cadastrar o primeiro.

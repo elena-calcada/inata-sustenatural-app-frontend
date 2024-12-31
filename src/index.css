@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.vercel-live-feedback {
+  display: none !important;
+}
+
 @layer base {
   body {
     @apply font-montserrat;
