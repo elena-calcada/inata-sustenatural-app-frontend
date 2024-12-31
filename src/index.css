@@ -4,10 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-iframe[src*="vercel.live"] {
-  display: none !important;
-}
-
 @layer base {
   body {
     @apply font-montserrat;
