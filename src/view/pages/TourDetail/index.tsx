@@ -81,10 +81,10 @@ export function TourDetail() {
               <div className="w-full flex flex-col gap-1 items-center justify-center">
                 <PackageOpen className="size-16 stroke-1 text-blueColor-dark/70" />
                 <div className="flex flex-col items-center justify-center gap-1">
-                  <span className="text-textColor/30 font-semibold text-sm">
+                  <span className="text-textColor/30 font-semibold text-sm text-center">
                     Você ainda não tem nenhum item cadastrado nesse passeio.
                   </span>
-                  <span className="text-textColor/30 font-semibold text-sm">
+                  <span className="text-textColor/30 font-semibold text-sm text-center">
                     Clique no botão{" "}
                     <span className="text-blueColor-base font-bold text-sm">
                       Novo
@@ -107,11 +107,11 @@ export function TourDetail() {
               </div>
             )}
 
-            <div className="w-full flex items-center justify-between border-b-[1px] border-textColor/25 pb-2 mb-4">
+            <div className="w-full flex items-center justify-between border-b-[1px] border-textColor/25 pb-2 mt-4 mb-4">
               <div className="flex items-center gap-4 text-">
                 <span className="text-lg font-bold font-montserrat">
                   {images.length === 1
-                    ? `${images.length} item`
+                    ? `${images.length} imagem`
                     : `${images.length} imagens`}
                 </span>
               </div>
@@ -132,10 +132,10 @@ export function TourDetail() {
               <div className="w-full flex flex-col gap-1 items-center justify-center mt-2 pb-20">
                 <PackageOpen className="size-16 stroke-1 text-blueColor-dark/70" />
                 <div className="flex flex-col items-center justify-center gap-1">
-                  <span className="text-textColor/30 font-semibold text-sm">
+                  <span className="text-textColor/30 font-semibold text-sm text-center">
                     Você ainda não tem nenhuma imagem cadastrada nesse passeio.
                   </span>
-                  <span className="text-textColor/30 font-semibold text-sm">
+                  <span className="text-textColor/30 font-semibold text-sm text-center">
                     Clique no botão{" "}
                     <span className="text-blueColor-base font-bold text-sm">
                       Inserir
