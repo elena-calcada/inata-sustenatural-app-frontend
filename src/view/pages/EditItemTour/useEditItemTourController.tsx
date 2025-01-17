@@ -42,9 +42,7 @@ const schema = z.object({
   short_description: z
     .string()
     .min(1, "Informe uma descrição curta do passeio"),
-  note: z
-    .string()
-    .min(1, "Informe uma observação que todos devem estar cientes"),
+  note: z.string().optional(),
   important: z.string().optional(),
 });
 

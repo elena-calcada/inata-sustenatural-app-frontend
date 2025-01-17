@@ -178,11 +178,7 @@ export function UpdateItemTour() {
                   {...register("short_description")}
                   error={errors.short_description?.message}
                 />
-                <TextArea
-                  placeholder="Observação *"
-                  {...register("note")}
-                  error={errors.note?.message}
-                />
+                <TextArea placeholder="Observação" {...register("note")} />
                 <TextArea
                   placeholder="Recado importante"
                   {...register("important")}

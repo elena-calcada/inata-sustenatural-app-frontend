@@ -19,7 +19,7 @@ export interface ICreateItemTourProps {
   available: "SIM" | "NAO";
   long_description: string;
   short_description: string;
-  note: string;
+  note?: string | "";
   important?: string | "";
 }
 
