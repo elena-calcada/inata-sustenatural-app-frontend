@@ -3,7 +3,7 @@ import { httpClient } from "../HttpClient";
 export interface ICreateItemTourProps {
   tour_id?: string;
   title: string;
-  date: string;
+  date?: string | "";
   duration: string;
   route_size: string;
   vacancies: number;
@@ -11,10 +11,10 @@ export interface ICreateItemTourProps {
   level?: string | "";
   type?: string | "";
   season?: string | "";
-  meeting_point_name: string;
-  meeting_point_hour: string;
-  meeting_point_address: string;
-  meeting_point_description: string;
+  meeting_point_name?: string | "";
+  meeting_point_hour?: string | "";
+  meeting_point_address?: string | "";
+  meeting_point_description?: string | "";
   pet: "SIM" | "NAO";
   available: "SIM" | "NAO";
   long_description: string;

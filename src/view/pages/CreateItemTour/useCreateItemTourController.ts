@@ -12,7 +12,7 @@ import { showErrorToast, showSuccessToast } from "../../../app/utils/toast";
 const schema = z.object({
   tour_id: z.string().uuid().optional(),
   title: z.string().min(1, "Informe o título"),
-  date: z.string().min(1, "Informe quando será"),
+  date: z.string().optional(),
   duration: z.string().min(1, "Informe a duração do passeio"),
   route_size: z.string().min(1, "Informe o tamanho do percurso"),
   vacancies: z.string().min(1, "Informe a quantidade de vagas"),
@@ -20,12 +20,10 @@ const schema = z.object({
   level: z.string().optional(),
   type: z.string().optional(),
   season: z.string().optional(),
-  meeting_point_name: z.string().min(1, "Informe o nome do ponto de encontro"),
-  meeting_point_hour: z.string().min(1, "Informe o horário do encontro"),
-  meeting_point_address: z.string().min(1, "Informe o endereço do encontro"),
-  meeting_point_description: z
-    .string()
-    .min(1, "Informe uma descrição do ponto de encontro"),
+  meeting_point_name: z.string().optional(),
+  meeting_point_hour: z.string().optional(),
+  meeting_point_address: z.string().optional(),
+  meeting_point_description: z.string().optional(),
   pet: z.enum(["SIM", "NAO"]),
   available: z.enum(["SIM", "NAO"]),
   long_description: z
@@ -35,6 +33,7 @@ const schema = z.object({
     .string()
     .min(1, "Informe uma descrição curta do passeio"),
   note: z.string().optional(),
+
   important: z.string().optional(),
 });
 

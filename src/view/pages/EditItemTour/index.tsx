@@ -41,12 +41,7 @@ export function UpdateItemTour() {
                   {...register("title")}
                   error={errors.title?.message}
                 />
-                <Input
-                  type="text"
-                  placeholder="Data *"
-                  {...register("date")}
-                  error={errors.date?.message}
-                />
+                <Input type="text" placeholder="Data" {...register("date")} />
                 <Input
                   type="text"
                   placeholder="Duração *"
@@ -91,27 +86,23 @@ export function UpdateItemTour() {
                 />
                 <Input
                   type="text"
-                  placeholder="Nome do ponto de encontro *"
+                  placeholder="Nome do ponto de encontro"
                   {...register("meeting_point_name")}
-                  error={errors.meeting_point_name?.message}
                 />
                 <Input
                   type="text"
-                  placeholder="Horário de chegada no ponto de encontro *"
+                  placeholder="Horário de chegada no ponto de encontro"
                   {...register("meeting_point_hour")}
-                  error={errors.meeting_point_hour?.message}
                 />
                 <Input
                   type="text"
-                  placeholder="Endereço do ponto de encontro *"
+                  placeholder="Endereço do ponto de encontro"
                   {...register("meeting_point_address")}
-                  error={errors.meeting_point_address?.message}
                 />
                 <Input
                   type="text"
-                  placeholder="Descrição do ponto de encontro *"
+                  placeholder="Descrição do ponto de encontro"
                   {...register("meeting_point_description")}
-                  error={errors.meeting_point_description?.message}
                 />
 
                 <div className="w-full flex flex-col items-center gap-4 py-2 md:flex-row">
