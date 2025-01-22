@@ -1,6 +1,6 @@
 import { httpClient } from "../HttpClient";
 
-interface IGetTourByIdResponse {
+export interface IGetTourByIdResponse {
   tour: {
     id: string;
     title: string;

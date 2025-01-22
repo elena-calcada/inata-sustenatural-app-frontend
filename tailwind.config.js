@@ -26,6 +26,7 @@ export default {
         green: "#00875F",
         background: "#F9F9F9",
         grayDark: '#4E4A49',
+        grayLight: "#D9D9D9",
         blueColor: {
           base: "rgba(69, 151, 177, 1)",
           dark: "rgba(0, 94, 124, 1)",
