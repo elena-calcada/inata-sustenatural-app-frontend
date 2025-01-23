@@ -28,7 +28,7 @@ export function TabTourImagesContent({
   return (
     <section className="w-full">
       <div className="w-full flex items-center justify-between border-b-[1px] border-textColor/25 pb-2 mb-4">
-        <div className="flex items-center gap-4 text-">
+        <div className="flex items-center gap-4 text-textColor">
           <span className="text-base font-semibold font-montserrat">
             {images.length === 1
               ? `${images.length} imagem`
@@ -49,7 +49,7 @@ export function TabTourImagesContent({
       )}
 
       {images.length === 0 && !isFetchingImages && (
-        <div className="w-full flex flex-col gap-1 items-center justify-center mt-2 pb-20">
+        <div className="w-full flex flex-col gap-1 items-center justify-center mt-2">
           <PackageOpen className="size-16 stroke-1 text-blueColor-dark/70" />
           <div className="flex flex-col items-center justify-center gap-1">
             <span className="text-textColor/30 font-semibold text-sm text-center">

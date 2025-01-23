@@ -1,3 +1,5 @@
+import { PackageOpen } from "lucide-react";
+
 import { ButtonLink } from "../../components/ButtonLink";
 import { CardTour } from "../../components/CardTour";
 import { Spinner } from "../../components/Spinner";
@@ -27,7 +29,23 @@ export function Tours() {
             </div>
           )}
 
-          {!isLoading && tours.length === 0 && <span>Nada aqui...</span>}
+          {!isLoading && tours.length === 0 && (
+            <div className="w-full flex flex-col gap-1 items-center justify-center mt-2">
+              <PackageOpen className="size-16 stroke-1 text-blueColor-dark/70" />
+              <div className="flex flex-col items-center justify-center gap-1">
+                <span className="text-textColor/30 font-semibold text-sm text-center">
+                  Você ainda não tem nenhuma imagem cadastrada nesse passeio.
+                </span>
+                <span className="text-textColor/30 font-semibold text-sm text-center">
+                  Clique no botão{" "}
+                  <span className="text-blueColor-base font-bold text-sm">
+                    Novo
+                  </span>{" "}
+                  acima para cadastrar o primeiro.
+                </span>
+              </div>
+            </div>
+          )}
 
           {!isLoading && tours.length !== 0 && (
             <div className="w-full flex flex-col gap-2 flex-1 lg:overflow-y-auto">

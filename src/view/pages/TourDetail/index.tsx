@@ -54,7 +54,7 @@ export function TourDetail() {
                     />
                   </div>
                 ) : (
-                  <div className="w-14 h-14 mb-2 rounded-md bg-blueColor-backgroundCard flex items-center justify-start">
+                  <div className="w-14 h-14 mb-2 rounded-md bg-blueColor-backgroundCard flex items-center justify-center">
                     <span className="text-blueColor-base/30 font-bold text-sm text-center">
                       Capa
                     </span>
