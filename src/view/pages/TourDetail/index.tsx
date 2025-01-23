@@ -43,9 +43,9 @@ export function TourDetail() {
             {isFetchingTour ? (
               <Spinner />
             ) : (
-              <div className="w-full flex items-center gap-4 xs:flex-col">
+              <div className="w-full flex items-center justify-center gap-4 xs:flex-col xs:gap-0">
                 {tour?.cover ? (
-                  <div className="w-20 h-20 mb-4">
+                  <div className="w-14 h-14 mb-2">
                     <img
                       src={`${import.meta.env.VITE_PUBLIC_IMAGE_URL}/${tour.cover}`}
                       sizes="5rem"
@@ -54,7 +54,7 @@ export function TourDetail() {
                     />
                   </div>
                 ) : (
-                  <div className="w-20 h-20 mb-4 rounded-md bg-blueColor-backgroundCard flex items-center justify-center">
+                  <div className="w-14 h-14 mb-2 rounded-md bg-blueColor-backgroundCard flex items-center justify-start">
                     <span className="text-blueColor-base/30 font-bold text-sm text-center">
                       Capa
                     </span>

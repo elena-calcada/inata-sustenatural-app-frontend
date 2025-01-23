@@ -67,7 +67,7 @@ export function TabTourImagesContent({
       )}
 
       {images.length !== 0 && !isFetchingImages && (
-        <div className="w-full grid grid-cols-12 gap-4 pb-20 items-center justify-center">
+        <div className="w-full grid grid-cols-12 gap-4 items-center justify-center">
           {images.map((image) => (
             <CardImage
               key={image.id}
