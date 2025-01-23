@@ -13,7 +13,7 @@ export function CreateItemTour() {
     useCreateItemTourController();
 
   return (
-    <main className="w-full z-30 h-full bg-background overflow-y-auto">
+    <main className="w-full z-30 h-full bg-white overflow-y-auto">
       <section className="containerSection">
         {tour && (
           <div className="divContainerSection">

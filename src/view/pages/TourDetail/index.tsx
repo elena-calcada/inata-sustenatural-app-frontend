@@ -36,7 +36,7 @@ export function TourDetail() {
   });
 
   return (
-    <main className="w-full z-30 h-full overflow-y-auto bg-background">
+    <main className="w-full z-30 h-full overflow-y-auto bg-white">
       <section className="containerSection">
         {tour && (
           <div className="divContainerSection">

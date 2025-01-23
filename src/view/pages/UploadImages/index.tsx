@@ -100,7 +100,7 @@ export function UploadImages() {
         </div>
       )}
       {tour && (
-        <div className="bg-background flex flex-col items-center py-28 px-6 h-screen overflow-y-auto">
+        <div className="bg-white flex flex-col items-center py-28 px-6 h-screen overflow-y-auto">
           <div className="flex items-center gap-2 mb-6">
             <h1 className="text-xl font-bold">
               Inserir Imagens para{" "}

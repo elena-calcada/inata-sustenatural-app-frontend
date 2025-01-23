@@ -31,7 +31,7 @@ export function Login() {
           <div className="flex items-center justify-between mt-2">
             <Link
               to="/forgot-password"
-              className="text-xs text-grayLight hover:text-blueColor-base transition-all"
+              className="text-xs text-grayDark hover:text-blueColor-base transition-all"
             >
               Esqueci minha senha
             </Link>

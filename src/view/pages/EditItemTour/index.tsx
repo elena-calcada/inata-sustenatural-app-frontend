@@ -14,7 +14,7 @@ export function UpdateItemTour() {
     useEditItemTourController();
 
   return (
-    <main className="w-full z-30 h-full bg-background overflow-y-auto">
+    <main className="w-full z-30 h-full bg-white overflow-y-auto">
       <section className="containerSection">
         {!item && (
           <div className="w-full h-full flex justify-center items-center">

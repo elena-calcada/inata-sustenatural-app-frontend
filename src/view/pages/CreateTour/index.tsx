@@ -10,7 +10,7 @@ export function CreateTour() {
     useCreateTourController();
 
   return (
-    <main className="w-full overflow-y-auto bg-background">
+    <main className="w-full overflow-y-auto bg-white">
       <section className="containerSection flex flex-col">
         <div className="divContainerSection">
           <div className="flex items-center justify-center gap-2">

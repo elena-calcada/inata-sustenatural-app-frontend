@@ -8,7 +8,7 @@ export function Tours() {
   const { tours, isLoading, handleDeleteTour } = useToursController();
 
   return (
-    <main className="w-full overflow-y-auto bg-background">
+    <main className="w-full overflow-y-auto bg-white">
       <section className="containerSection flex flex-col">
         <div className="divContainerSection">
           <h1 className="h1">Grupos de Passeios</h1>
