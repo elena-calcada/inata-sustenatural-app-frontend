@@ -137,7 +137,7 @@ export function CreateItemTour() {
                         <Select
                           onChange={onChange}
                           value={value}
-                          label="Esse passeio está disponível?"
+                          label="Quer destacar esse passeio?"
                           placeholder="Selecione uma opção..."
                           error={errors.pet?.message}
                           options={[
