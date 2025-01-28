@@ -48,11 +48,9 @@ export function useTourDetailController() {
       await assignTourCover({ tourId, imageId });
       queryCient.invalidateQueries({ queryKey: ["getTourById", tourId] });
       queryCient.invalidateQueries({ queryKey: ["getImages", tourId] });
-      showSuccessToast("Seu grupo de passeios agora tem uma capa!");
+      showSuccessToast("Seu destino agora tem uma capa!");
     } catch {
-      showErrorToast(
-        "Não foi possível atribuir capa a esse grupo de passeios...",
-      );
+      showErrorToast("Não foi possível atribuir capa a esse destino...");
     }
   }
 
@@ -64,9 +62,9 @@ export function useTourDetailController() {
       await removeTourCover(imageId);
       queryCient.invalidateQueries({ queryKey: ["getTourById", tourId] });
       queryCient.invalidateQueries({ queryKey: ["getImages", tourId] });
-      showSuccessToast("A capa do grupo foi removida");
+      showSuccessToast("A capa do destino foi removida");
     } catch {
-      showErrorToast("Erro ao remover capa do grupo");
+      showErrorToast("Erro ao remover capa do destino");
     }
   }
 

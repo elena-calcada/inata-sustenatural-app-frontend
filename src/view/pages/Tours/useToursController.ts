@@ -20,9 +20,9 @@ export function useToursController() {
     try {
       await deleteTour(id);
       queryClient.invalidateQueries({ queryKey: ["getTours"] });
-      showSuccessToast("Grupo de passeios deletado com sucesso");
+      showSuccessToast("Destino de passeios deletado com sucesso");
     } catch {
-      showErrorToast("Falha ao deletar grupo");
+      showErrorToast("Falha ao deletar destino");
     }
   }
 

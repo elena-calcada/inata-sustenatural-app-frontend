@@ -14,7 +14,7 @@ export function CreateTour() {
       <section className="containerSection flex flex-col">
         <div className="divContainerSection">
           <div className="flex items-center justify-center gap-2">
-            <h1 className="text-2xl font-bold">Cadastre um novo grupo</h1>
+            <h1 className="text-2xl font-bold">Cadastre um novo destino</h1>
             <ButtonBack href="/tours" containerStyle="" />
           </div>
           <div className="w-full">

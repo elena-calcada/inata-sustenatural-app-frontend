@@ -62,14 +62,18 @@ export function TourDetail() {
                 )}
                 <div className="flex items-center gap-2 mb-4">
                   <h1 className="text-2xl font-bold xs:text-xl">
-                    {`Grupo - ${tour?.title}`}
+                    {`Destino - ${tour?.title}`}
                   </h1>
                   <ButtonBack href="/tours" containerStyle="" />
                 </div>
               </div>
             )}
 
-            <Tabs tabs={tabData} />
+            <Tabs
+              tabs={tabData}
+              imagesAmount={images.length}
+              toursAmount={items.length}
+            />
           </div>
         )}
       </section>

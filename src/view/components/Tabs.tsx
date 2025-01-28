@@ -4,9 +4,11 @@ import { ITabDataItem } from "../../app/utils/getTabData";
 
 interface ITabsProps {
   tabs: ITabDataItem[];
+  imagesAmount?: number;
+  toursAmount?: number;
 }
 
-export function Tabs({ tabs }: ITabsProps) {
+export function Tabs({ tabs, imagesAmount, toursAmount }: ITabsProps) {
   const [activeTab, setActiveTab] = useState<number>(tabs[0].id);
 
   return (
@@ -16,13 +18,21 @@ export function Tabs({ tabs }: ITabsProps) {
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`px-4 rounded-t-xl font-semibold py-2 ${
+            className={`px-4 rounded-t-xl font-semibold py-2 flex gap-2 ${
               activeTab === tab.id
-                ? "border-blueColor-base/15 border-t-[1px] border-l-[1px] border-r-[1px] bg-grayLight/20 text-blueColor-dark"
+                ? "border-blueColor-base/15 border-t-[1px] border-l-[1px] border-r-[1px] bg-grayLight/20 text-blueColor-dark flex gap-2"
                 : ""
             }`}
           >
             {tab.title}
+            <span className="text-xs block">
+              {imagesAmount && imagesAmount !== 0 && tab.title === "Imagens"
+                ? imagesAmount
+                : ""}
+              {toursAmount && toursAmount !== 0 && tab.title === "Passeios"
+                ? toursAmount
+                : ""}
+            </span>
           </button>
         ))}
       </div>

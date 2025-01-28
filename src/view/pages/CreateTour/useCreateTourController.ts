@@ -38,10 +38,10 @@ export function useCreateTourController() {
   const handleSubmit = hookFormHandleSubmit(async (data) => {
     try {
       await mutateAsync(data);
-      showSuccessToast("Grupo de passeio cadastrado com sucesso");
+      showSuccessToast("Destino cadastrado com sucesso");
       navigate("/tours");
     } catch {
-      showErrorToast("Não foi possível criar o grupo...");
+      showErrorToast("Não foi possível criar o destino...");
     }
   });
 
